@@ -13,7 +13,7 @@
  // the delay is only to avoid sending so much data
  // as to make it unreadable.
  void loop() {
-   int v = analogRead(LDR);
+   float v = analogRead(LDR);
    Serial.print("@");
    v = 10*(1023-v)/v;
    Serial.print(v);
