@@ -13,7 +13,5 @@ void setup() {
 void loop() {
   delay(50);
   int uS = sonar.ping();
-  Serial.print("Ping: ");
   Serial.print(uS / US_ROUNDTRIP_CM);
-  Serial.println("cm");
 }
