@@ -15,6 +15,7 @@
  void loop() {
    int v = analogRead(LDR);
    Serial.print("@");
+   v = 10*(1023-v)/v;
    Serial.print(v);
    Serial.print("#");
    delay(1000);
