@@ -14,6 +14,8 @@
  // as to make it unreadable.
  void loop() {
    int v = analogRead(LDR);
-   Serial.println(v);
+   Serial.print("@");
+   Serial.print(v);
+   Serial.print("#");
    delay(1000);
  }
