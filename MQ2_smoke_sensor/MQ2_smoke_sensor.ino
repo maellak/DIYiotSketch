@@ -40,7 +40,7 @@ void loop() {
 
 Serial.print("@");
 Serial.print(bySensorVal);
-Serial.print("#");
+Serial.println("#");
 
   // Loop 10 times per second
   delay(100);
