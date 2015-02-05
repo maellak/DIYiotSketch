@@ -16,11 +16,12 @@
    float v = analogRead(LDR);
    float tempvar;
    
-   // R = 10*(1023-v)/v           //v se 0-1023 --> R se kOhm 
-   // lux = -10*R + 10000 + 1/10  //R se kOhm
+   // R = 10*(1023-v)/v           R --> kOhm  (v 0-1023)
+   // lux = 464,1588833613*(1/R)^1,3333333333  //R se kOhm
+   //http://kennarar.vma.is/thor/v2011/vgr402/ldr.pdf
    tempvar = 10*(1023-v);
-   tempvar = tempvar/v;
-   tempvar = -10.*tempvar + 10000. + 0.1
+   tempvar = tempvar/v; //R se kOhm
+   tempvar = 464.1588833613*pow(1./tempvar,1.3333333333);
    
    Serial.print("@");
    Serial.print(tempvar);
