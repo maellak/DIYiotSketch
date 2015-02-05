@@ -14,9 +14,16 @@
  // as to make it unreadable.
  void loop() {
    float v = analogRead(LDR);
+   float tempvar;
+   
+   // R = 10*(1023-v)/v           //v se 0-1023 --> R se kOhm 
+   // lux = -10*R + 10000 + 1/10  //R se kOhm
+   tempvar = 10*(1023-v);
+   tempvar = tempvar/v;
+   tempvar = -10.*tempvar + 10000. + 0.1
+   
    Serial.print("@");
-   v = 5.*v/1023.;
-   Serial.print(v);
+   Serial.print(tempvar);
    Serial.print("#");
    delay(1000);
  }
