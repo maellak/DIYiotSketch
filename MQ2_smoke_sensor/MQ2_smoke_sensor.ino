@@ -20,9 +20,6 @@ int iSensorValue = 0;
 // Mapped value from 0 to 100
 byte bySensorVal = 0;
 
-// Message string to be displayed on serial monitor
-char cMsg[124];
-
 //////////////////////////////////////////////////////
 //
 // SETUP
@@ -41,17 +38,9 @@ void loop() {
   iSensorValue = analogRead(A0);
   bySensorVal = map(iSensorValue, 0, 1023, 0, 100);
 
-  // Display input value and mapped value
-  sprintf(cMsg, "MQ-2 Sensor Value : %d (%d)", iSensorValue, bySensorVal);
-
-  // Check for high value
-  if (bySensorVal > 60) {
-    Serial.print(cMsg);
-    Serial.println(F(" *** DISTURBANCE IN THE FORCE! ***"));
-  }
-  else {
-    Serial.println(cMsg);
-  }
+Serial.print("@");
+Serial.print(bySensorVal);
+Serial.println("#");
 
   // Loop 10 times per second
   delay(100);
