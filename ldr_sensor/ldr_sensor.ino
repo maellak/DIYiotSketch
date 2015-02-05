@@ -25,6 +25,6 @@
    
    Serial.print("@");
    Serial.print(tempvar);
-   Serial.print("#");
+   Serial.println("#");
    delay(1000);
  }
